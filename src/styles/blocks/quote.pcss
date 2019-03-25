@@ -1,0 +1,46 @@
+.quote {
+    position: relative;
+    padding-left: 28%;
+}
+
+.quote::before {
+    content: '';
+    display: block;
+    width: 18%;
+    height: 37%;
+    opacity: 1;
+    background: svg-load('quote.svg', fill=#292a2d) center center / contain no-repeat; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.quote__text {
+    font-weight: 600;
+    font-size: 16px;
+    color: #919192;
+    margin-bottom: 32px;
+}
+
+.quote__author {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.quote.author-avatar {
+    margin-right: 30px;
+}
+
+.quote__author-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 22px;
+}
+
+.quote__author-job {
+    font-weight: 600;
+    font-size: 16px;
+    color: #919192;
+}

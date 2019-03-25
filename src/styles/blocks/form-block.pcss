@@ -1,0 +1,67 @@
+.form__row {
+    display: flex;
+}
+
+// Лэйбл
+.form-block {
+    margin-right: 50px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 14px;
+    flex: 1;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:before {
+        content: attr(data-title);
+        margin-bottom: 21px;
+        display: block;
+        font-weight: 600;
+        color: #919192;
+        margin-left: 50px;
+    }
+}
+// Совокупность иконки и текста в поле для ввода
+.form-block__container {
+    display: flex;
+    align-items: center;
+
+    &_align_top {
+        align-items: flex-start;
+    }
+}
+// Иконка в поле для ввода
+.form-block__icon {
+    width: 30px;
+    height: 30px;
+    fill: #5b5e5f;
+    margin-right: 16px;
+}
+
+// Поле для ввода (инпут)
+.form-block__input {
+    background: transparent;
+    border: 0 none;
+    width: 100%;
+    flex: 1;
+    color: #fff;
+// Плейсхолдер поля для ввода (инпут)
+    &::placeholder {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+// Поведение поля для ввода при фокусе
+    &:focus {
+        outline: none;
+    }
+// Поведение плейсхолдера поля для ввода при фокусе
+    &:focus::placeholder {
+        color: transparent;
+    }
+}
+// Текстареа
+.form-block__textarea {
+    line-height: 36px;
+    resize: none;
+}

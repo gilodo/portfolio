@@ -1,0 +1,172 @@
+.footer {
+    background: #1f232d;
+    padding: 88px 0;
+    color: rgba(#fff, .3);
+    line-height: 1.7;
+
+    @include desktop {
+        padding: 65px 0;
+    }
+
+    @include tablets {
+        padding: 50px 0;
+    }
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+
+
+    @include phones {
+        flex-direction: column;
+    }
+}
+
+.footer__copyright {
+    width: 25%;
+    color: rgba (#fff, .1);
+
+    @include tablets {
+        width: 30%;
+    }
+
+    @include phones {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.copyright {
+    display: flex;
+    align-items: flex-start;
+}
+
+.copyright__year {
+    font-weight: 600;
+    font-size: 48px;
+    color: #5b5e5f;
+    width: 46.3%; 
+    margin-right: 64px;
+}
+
+.copyright-name {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.copyright__data-text {
+    font-size: 16px;
+}
+
+.footer__data {
+    width: 66%;
+    padding-top: 7px;
+
+    @include desktop {
+        width: 74%;
+    }
+
+    @include tablets {
+        width: 65%;
+        font-size: 14px;
+    }
+
+    @include phones {
+        width: 100%;
+    }
+}
+
+.nav--color-white {
+    color: #fff;
+}
+
+.nav__footer {
+    margin-bottom: 60px;
+
+    @include tablets {
+        margin-bottom: 30px;
+    }
+
+    .nav__list {
+        justify-content: flex-start;
+        margin-left: -57px;
+
+        @include tablets {
+            flex-wrap: wrap;
+            margin-left: -61px;
+        }
+    }
+
+    .nav__item {
+        margin-right: 61px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include tablets {
+            margin-bottom: 13px;
+            margin-left: 61px;
+        }
+    }
+
+    .nav__link {
+        padding: 0;
+        border-bottom: none;
+        transition: border-bottom-color .2s;
+    }
+}
+
+.footer__data-content {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablets {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.footer__data-col {
+    width: 48%;
+
+    @include phones {
+        margin-bottom: 45px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &_social {
+        @include desktop {
+            width: 45%;
+        }
+
+        @include tablets {
+            width: 100%;
+            margin-bottom: 55px;
+        }
+    }
+
+    &_quote {
+        @include desktop {
+            width: 55%;
+        }
+
+        @include tablets {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.footer__data-text {
+    margin-bottom: 25px;
+
+    @include tablets {
+        margin-bottom: 20px;
+    }
+}

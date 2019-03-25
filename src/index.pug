@@ -1,0 +1,210 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .maincontent
+        //- +image('content/user.jpg', 'user-pic')
+        //- +icon('link', 'link-class')
+        //- .icon-bg
+        .welcome-section
+
+          section.hero.fullscreen-section
+              .container.hero__container
+                header.header
+                  .header__logo
+                    a.logo(href="#") МГ
+                  .header__menu
+                    nav.nav
+                      ul.nav__list
+                        - var navItems = ['Главная', 'Обо мне','Навыки','Работы','Отзывы','Связаться'];
+                        each item in navItems
+                          li.nav__item
+                            a(href='#').nav__link #{item}
+                  .header__socials
+                    ul.socials
+                      - var socials = ['insta', 'vk', 'github'];
+                      each item in socials
+                        li.socials__item
+                          a(href='#').socials__link
+                            +icon(`${item}`, 'socials__icon')
+                .hero__content
+                  .owner-info
+                    .owner-info__title Личный сайт </br> веб-разработчика
+                    .owner-info__name Михаил Гилодо
+                .hero__down-button
+                  .scroll-down
+                    a(href='#').scroll-down__text Скролл
+                    +icon(`scroll`, 'scroll-down__icon')
+
+          section.about
+            .container.container-about
+              .about__left
+                .owner
+                  .owner__avatar
+                    +image('content/owner.png', 'owner__avatar-pic')
+                  .owner__data
+                    table.owner__data-table
+                      -
+                        var data = [
+                          ['Проживаю', 'Рига'],
+                          ['Возраст', '38 лет'],
+                          ['Родился', '23 ноября 1980'],
+                        ]
+                      each row in data
+                        tr.owner__data-row
+                          td.owner__data-cell-first #{row[0]}
+                          td.owner__data-cell-second #{row[1]}  
+              .about__right
+                p.about__hello Привет, меня зовут
+                p.about__owner-name Михаил Гилодо
+                p.about__desc-owner Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                p.about__desc-site Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!                 
+        
+        section.values
+          .container
+            .values__title
+              h2.section-title.values__title-text.section-title--small Чем я могу быть полезен Вам
+              .values__desc
+                p.values__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            ul.owner-skills
+              -
+                var skills = [
+                  ['Front-end', ['HTML5', 'CSS3', 'JavaScript', 'JQuery и Vue.js']],
+                  ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                ]
+              each item in skills    
+                li.owner-skills__item
+                  .skills-row
+                    h3.skills-row__title #{item[0]}
+                    ul.skills-row__list
+                      each skill in item[1]
+                        li.skills-row__item
+                          .skill
+                            svg(viewBox='0 0 100 100' preserveAspectRatio='none').skill__shape
+                              circle(cx='50' cy='50' r='40').skill__circle.skill__circle--under
+                              circle(cx='50' cy='50' r='40').skill__circle.skill__circle--above
+                              linear-gradient()
+                            .skill__title #{skill}  
+        
+        section.works
+          .container
+            h2.section-title.works__title Мои работы
+            .works__info
+            
+              .works__slider
+                .works__slider-pics(data-slide="2")
+
+                  .works__slider-fullpic-container
+                    +image('content/slider-current.jpg', 'works-slider__fullpic', alt="Текущая работа")
+
+                  ul.works__slider-thumbs
+                    - var thumbs__item = ['slider-thumb1.jpg', 'slider-thumb2.jpg', 'slider-thumb3.jpg', 'slider-thumb4.jpg']
+                    each thumb in thumbs__item
+                      li.works__slider-thumb-item
+                        a.works__slider-thumb-link(href="#")
+                          +image(`content/${thumb}`, 'works__slider-thumb')
+
+                  .works__slider-buttons
+                    a.works__slider-btn.works__slider-btn-next(href="#") 
+                    a.works__slider-btn.works__slider-btn-prev(href="#") 
+                    
+                .works__desc
+                  ul.works__majors
+                    - var majors = ['HTML', 'CSS', 'JavaScript'];
+                    each item in majors
+                      li.works__majors_item #{item}
+                  h3.works__title Сайт школы образования
+                  p.works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  p.works__school
+                    +icon('link', 'works__school-link')
+                    a(href='#').works__school-site Посмотреть сайт
+            +image('content/leaf.png', 'works__leaf', alt="Листик")        
+        
+        section.me
+          .container
+
+            section.reviews.me-reviews
+              h2.section-title.reviews-title Что обо мне говорят
+              .reviews__slider-controls
+              .reviews__control_prev
+                +icon('arrow-down', 'reviews__control_prev-pic')
+              .reviews__control_next
+                +icon('arrow-down', 'reviews__control_next-pic')
+              ul.reviews__slider
+                - for (var i = 0; i < 2; i++) // ??????????
+                  li.reviews__slider-item
+                    .quote
+                      .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .quote__author
+                        .quote.author-avatar
+                          +image('content/kovalchuk.png', 'review__author-pic-avatar', alt="Дмитрий Ковальчук")
+                        .quote__author-info
+                          .quote__author-name Дмитрий Ковальчук
+                          .quote__author-job Основатель LoftSchool
+              
+            //- .reviews__right
+            //-   blockquote.review__right Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+            //-   .review__info
+            //-     .review__author-pic
+            //-       +image('content/sabantsev.png', 'review__author-pic-avatar', alt="Владимир Сабанцев")
+            //-     .review__author-data
+            //-       .review__author-name Владимир Сабанцев
+            //-       .review__author-job Преподаватель
+
+            section.contacts
+              h2.section-title.contacts-title Связаться со мной
+              form.contacts__form.form(action="#")
+                .form__row
+                  - 
+                    var fields = [
+                      ['user', 'Введите ваше имя', 'Ковальчук Дмитрий'],
+                      ['envelope', 'Введите ваш email', 'loftschool@study.com']
+                    ]
+                  each item in fields
+                    label.form-block(data-title=item[1])
+                      .form-block__container
+                        +icon(`${item[0]}`, 'form-block__icon')
+                        input(type='text' placeholder=item[2]).form-block__input 
+                .form__row.form__row--extra-margin
+                  label.form-block(data-title='Сообщение к письму')
+                    .form-block__container.form-block__container_align_top
+                      +icon('message', 'form-block__icon')
+                      textarea.form-block__input.form-block__textarea(placeholder='Требуется ваша помощь в создании сайта.\nИнтересуют сроки и цена вопроса')
+                .form__row
+                  input(type='submit' value='Отправить').form__submit        
+
+        footer.footer
+          .container.footer__container
+            .footer__copyright
+              .copyright
+                .copyright__year © 2019
+                .copyright-desc
+                  .copyright-name Михаил Гилодо
+                  .copyright__data-text Личный сайт</br>веб-разработчика
+            .footer__data
+              nav.nav.nav--color-white.nav__footer
+                ul.nav__list
+                  each item in navItems
+                    li.nav__item
+                    a(href='#' title=`${item}`).nav__link #{item}
+              .footer__data-content
+                .footer__data-col.footer__data-col_social
+                  .footer__data-text
+                    p Этой сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+                  ul.socials.socials--round-borders
+                    each item in socials
+                      li.socials__item
+                        a(href="#").socials__link
+                          +icon(item, 'socials__icon_rounded')  
+                .footer__data-col.footer__data-col_quote
+                  .text-quote
+                    .text-quote__text
+                      p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живёте
+                    .text-quote__author Martin Golding            
