@@ -3,6 +3,31 @@
     padding: 200px 0px 210px;
 }
 
+.works__slider-thumb-item {
+    position: relative;
+    &::before{
+        content: "";
+        background:#f39502; 
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    &:hover::before{
+        opacity: 0.5;
+    }
+
+}
+
+.works__slider-thumb-item.active, .works__slider-thumb-item:hover {
+    outline: 3px solid #f39502;
+    z-index: 10;
+}
+
 .works__desc {
     margin-left: 160px;
 }
@@ -13,9 +38,9 @@
 }
 
 .works__majors_item {
-    margin-right: 57px;
-    padding: 18px 24px;
-    border-radius: 20px;
+    margin-right: 16px;
+    padding: 13px 19px;
+    border-radius: 23px;
     background-color: #f1f5f9;
 
     &:last-child {

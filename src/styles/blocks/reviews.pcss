@@ -3,12 +3,18 @@
     overflow: hidden;
     z-index: 1;
     position: relative;
+    padding-top: 151px;
+}
+
+.reviews__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 101px;
 }
 
 .reviews-title {
-    margin-top: 151px;
-    margin-bottom: 101px;
     color: #fff;
+    margin-right: 40px;
 }
 
 .reviews__slider {
@@ -29,4 +35,38 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.reviews-controls__button {
+     width: 3.125rem;
+    height: 3.125rem;
+    border: 1px solid #fff;
+    position: relative;
+    border-radius: 50%;
+    margin-right: 1.875rem;
+    outline: none;
+    &:focus, &:hover{
+        border: 1px solid #f39502;
+     
+     & .reviews-controls__pic {
+        fill: #f39502;
+     }
+
+    }
+
+}
+
+.reviews-controls__button_prev {
+    & .reviews-controls__pic {
+        transform:translate(-50%,-50%) rotate(-180deg);
+    }
+}
+
+.reviews-controls__pic {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 35%;
+    fill: #fff;
 }

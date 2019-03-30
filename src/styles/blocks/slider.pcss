@@ -52,7 +52,7 @@
 .works__slider-thumbs {
     // Все видно (143:08, 144:17), разворот (147:45)
     position: absolute;
-    right: -54px;
+    right: 0;
     bottom: 60px;
     width: 80%;
     display: flex;
@@ -115,7 +115,7 @@
     }
 
     &:hover {
-        // Все видно (142:34)    
+        background: #f29400;    
         &::before {
           opacity: 1; // ?????
         }
@@ -123,6 +123,6 @@
 
     &-prev::before {
         // Все видно (143:09), разворот (147:27)
-        transform: translate(-50%, 50%) rotate(-180deg);
+        transform: translate(-50%, -50%) rotate(-180deg);
     }
 }

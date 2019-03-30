@@ -73,77 +73,34 @@ html(lang="en")
               h2.section-title.values__title-text.section-title--small Чем я могу быть полезен Вам
               .values__desc
                 p.values__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            ul.owner-skills
-              -
-                var skills = [
-                  ['Front-end', ['HTML5', 'CSS3', 'JavaScript', 'JQuery и Vue.js']],
-                  ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
-                ]
-              each item in skills    
-                li.owner-skills__item
-                  .skills-row
-                    h3.skills-row__title #{item[0]}
-                    ul.skills-row__list
-                      each skill in item[1]
-                        li.skills-row__item
-                          .skill
-                            svg(viewBox='0 0 100 100' preserveAspectRatio='none').skill__shape
-                              circle(cx='50' cy='50' r='40').skill__circle.skill__circle--under
-                              circle(cx='50' cy='50' r='40').skill__circle.skill__circle--above
-                              linear-gradient()
-                            .skill__title #{skill}  
-        
+            .values__widget
+              #skills-component  
+                      
         section.works
           .container
             h2.section-title.works__title Мои работы
             .works__info
-            
-              .works__slider
-                .works__slider-pics(data-slide="2")
-
-                  .works__slider-fullpic-container
-                    +image('content/slider-current.jpg', 'works-slider__fullpic', alt="Текущая работа")
-
-                  ul.works__slider-thumbs
-                    - var thumbs__item = ['slider-thumb1.jpg', 'slider-thumb2.jpg', 'slider-thumb3.jpg', 'slider-thumb4.jpg']
-                    each thumb in thumbs__item
-                      li.works__slider-thumb-item
-                        a.works__slider-thumb-link(href="#")
-                          +image(`content/${thumb}`, 'works__slider-thumb')
-
-                  .works__slider-buttons
-                    a.works__slider-btn.works__slider-btn-next(href="#") 
-                    a.works__slider-btn.works__slider-btn-prev(href="#") 
-                    
-                .works__desc
-                  ul.works__majors
-                    - var majors = ['HTML', 'CSS', 'JavaScript'];
-                    each item in majors
-                      li.works__majors_item #{item}
-                  h3.works__title Сайт школы образования
-                  p.works__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                  p.works__school
-                    +icon('link', 'works__school-link')
-                    a(href='#').works__school-site Посмотреть сайт
+              #slider-components
             +image('content/leaf.png', 'works__leaf', alt="Листик")        
         
         section.me
           .container
 
             section.reviews.me-reviews
-              h2.section-title.reviews-title Что обо мне говорят
-              .reviews__slider-controls
-              .reviews__control_prev
-                +icon('arrow-down', 'reviews__control_prev-pic')
-              .reviews__control_next
-                +icon('arrow-down', 'reviews__control_next-pic')
+              .reviews__header
+                h2.section-title.reviews-title Что обо мне говорят
+                .reviews-controls
+                  button(type="button").reviews-controls__button.reviews-controls__button_prev
+                    +icon('arrow-down', 'reviews-controls__pic')
+                  button(type="button").reviews-controls__button.reviews-controls__button_next
+                    +icon('arrow-down', 'reviews-controls__pic')
               ul.reviews__slider
                 - for (var i = 0; i < 2; i++) // ??????????
                   li.reviews__slider-item
                     .quote
                       .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                       .quote__author
-                        .quote.author-avatar
+                        .quote__author-avatar
                           +image('content/kovalchuk.png', 'review__author-pic-avatar', alt="Дмитрий Ковальчук")
                         .quote__author-info
                           .quote__author-name Дмитрий Ковальчук
@@ -207,4 +164,6 @@ html(lang="en")
                   .text-quote
                     .text-quote__text
                       p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живёте
-                    .text-quote__author Martin Golding            
+                    .text-quote__author Martin Golding
+
+    include ./templates/entry.pug            
