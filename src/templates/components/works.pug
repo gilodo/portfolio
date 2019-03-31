@@ -13,14 +13,14 @@ script(type="text/x-template")#slider-container
 script(type="text/x-template")#slider-display
     .works__slider-pics(:data-slide="currentIndex + 1")
         .works__slider-fullpic-container
-        img(:src="currentWork.photo").works-slider__fullpic
-        thumbs(
-            :works="reversedWorks"
-            :currentWork="currentWork"
-        )
-        btns(
-            @slide="direction => $emit('slide', direction)"
-        )    
+            img(:src="currentWork.photo").works-slider__fullpic
+            thumbs(
+                :works="reversedWorks"
+                :currentWork="currentWork"
+            )
+            btns(
+                @slide="direction => $emit('slide', direction)"
+            )    
 
 script(type="text/x-template")#slider-thumbs
     ul.works__slider-thumbs

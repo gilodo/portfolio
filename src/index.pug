@@ -15,33 +15,47 @@ html(lang="en")
         //- .icon-bg
         .welcome-section
 
-          section.hero.fullscreen-section
-              .container.hero__container
-                header.header
-                  .header__logo
-                    a.logo(href="#") МГ
-                  .header__menu
-                    nav.nav
-                      ul.nav__list
-                        - var navItems = ['Главная', 'Обо мне','Навыки','Работы','Отзывы','Связаться'];
-                        each item in navItems
-                          li.nav__item
-                            a(href='#').nav__link #{item}
-                  .header__socials
-                    ul.socials
-                      - var socials = ['insta', 'vk', 'github'];
-                      each item in socials
-                        li.socials__item
-                          a(href='#').socials__link
-                            +icon(`${item}`, 'socials__icon')
-                .hero__content
-                  .owner-info
-                    .owner-info__title Личный сайт </br> веб-разработчика
-                    .owner-info__name Михаил Гилодо
-                .hero__down-button
-                  .scroll-down
-                    a(href='#').scroll-down__text Скролл
-                    +icon(`scroll`, 'scroll-down__icon')
+          section.parallax
+            .parallax__inner
+
+              section.hero.fullscreen-section
+                  .container.hero__container
+                    header.header
+                      .header__logo
+                        a.logo(href="#") МГ
+                      .header__menu
+                        nav.nav
+                          ul.nav__list
+                            - var navItems = ['Главная', 'Обо мне','Навыки','Работы','Отзывы','Связаться'];
+                            each item in navItems
+                              li.nav__item
+                                a(href='#').nav__link #{item}
+                      .header__socials
+                        ul.socials
+                          - var socials = ['insta', 'vk', 'github'];
+                          each item in socials
+                            li.socials__item
+                              a(href='#').socials__link
+                                +icon(`${item}`, 'socials__icon')
+
+                      .parallax-animation
+                        .parallax__layer(data-speed=0.1 style="transform: translateY(0%)")
+                          img(src=require("images/parallax/parallax1.jpg")).parallax__image
+                        .parallax__layer(data-speed=0.2 style="transform: translateY(0%)")
+                            img(src=require("images/parallax/parallax2.jpg")).parallax__image
+                        .parallax__layer(data-speed=0.3 style="transform: translateY(0%)")
+                          img(src=require("images/parallax/parallax3.jpg")).parallax__image
+                        .parallax__layer(data-speed=0.4 style="transform: translateY(0%)")
+                          img(src=require("images/parallax/parallax4.jpg")).parallax__image
+
+                    .hero__content
+                      .owner-info
+                        .owner-info__title Личный сайт </br> веб-разработчика
+                        .owner-info__name Михаил Гилодо
+                    .hero__down-button
+                      .scroll-down
+                        a(href='#').scroll-down__text Скролл
+                        +icon(`scroll`, 'scroll-down__icon')
 
           section.about
             .container.container-about
