@@ -20,8 +20,19 @@ script(type="text/x-template")#slider-display
             )
             btns(
                 @slide="direction => $emit('slide', direction)"
-            )    
+            )  
 
+script(type="text/x-template")#slider-info
+    .works__desc
+        tags(
+            :tagsArray="tagsArray"
+        )
+        h3.works__title {{currentWork.title}}
+        p.works__text {{currentWork.desc}}
+        p.works__school
+        +icon('link', 'works__school-link')
+        a(href='currentWork.link').works__school-site Посмотреть сайт
+        
 script(type="text/x-template")#slider-thumbs
     ul.works__slider-thumbs
         li.works__slider-thumb-item(
@@ -41,13 +52,3 @@ script(type="text/x-template")#slider-tags
         li.works__majors_item(v-for="tag in tagsArray")
             .tag {{tag}}
 
-script(type="text/x-template")#slider-info
-    .works__desc
-        tags(
-            :tagsArray="tagsArray"
-        )
-        h3.works__title {{currentWork.title}}
-        p.works__text {{currentWork.desc}}
-        p.works__school
-        +icon('link', 'works__school-link')
-        a(href='currentWork.link').works__school-site Посмотреть сайт

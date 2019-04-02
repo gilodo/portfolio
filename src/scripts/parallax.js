@@ -1,4 +1,4 @@
-const parallax = document.querySelector('.parallax');
+const parallax = document.querySelector('.parallax__inner');
 const layers = parallax.children;
 
 function moveLayersDependingOnScroll(wScroll) {
@@ -6,7 +6,7 @@ function moveLayersDependingOnScroll(wScroll) {
         const divider = layer.dataset.speed;
         const strafe = wScroll * divider / 10;
 
-        layer.style.transform = `translateY(-${strate}%)`
+        layer.style.transform = `translateY(-${strafe}%)`
     })
 }
 

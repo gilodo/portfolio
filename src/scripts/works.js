@@ -1,22 +1,6 @@
 import Vue from "vue";
 
-const display = {
-    template: "#slider-display",
-    components: {
-        btns, thumbs
-    },
-    props: {
-        works: Array,
-        currentWork: Object,
-        currentIndex: Number
-    },
-    computed: {
-        reversedWorks() {
-            const works = [...this.works];
-            return works.reverse();
-        }
-    }
-};
+
 
 const thumbs = {
     template: "#slider-thumbs",
@@ -47,6 +31,7 @@ const tags = {
     }
 };
 
+
 const info = {
     template: "#slider-info",
     components: {
@@ -62,6 +47,23 @@ const info = {
     }
 };
 
+const display = {
+    template: "#slider-display",
+    components: {
+        btns, thumbs
+    },
+    props: {
+        works: Array,
+        currentWork: Object,
+        currentIndex: Number
+    },
+    computed: {
+        reversedWorks() {
+            const works = [...this.works];
+            return works.reverse();
+        }
+    }
+};
 new Vue ({
     template: "#slider-container",   // Откуда взять
     el: "#slider-components",         // Куда примонтировать    
