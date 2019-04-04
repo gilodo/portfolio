@@ -19,7 +19,7 @@ html(lang="en")
               .parallax__layer(data-speed=0.1 style="transform: translateY(0%)")
                 img(src=require("images/parallax/parallax.jpg")).parallax__image
               .parallax__layer(data-speed=0.2 style="transform: translateY(0%)")
-                  img(src=require("images/parallax/parallax1.png")).parallax__image
+                img(src=require("images/parallax/parallax1.png")).parallax__image
               .parallax__layer(data-speed=0.3 style="transform: translateY(0%)")
                 img(src=require("images/parallax/parallax2.png")).parallax__image
               .parallax__layer(data-speed=0.4 style="transform: translateY(0%)")
@@ -36,6 +36,8 @@ html(lang="en")
                         each item in navItems
                           li.nav__item
                             a(href='#').nav__link #{item}
+                  .hamburger-menu
+                    span          
                   .header__socials
                     ul.socials
                       - var socials = ['insta', 'vk', 'github'];

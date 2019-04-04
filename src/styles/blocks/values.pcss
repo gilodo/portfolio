@@ -2,12 +2,22 @@
     background: url('~images/bg/values.jpg') center center no-repeat / cover;
     color: #fff;
     padding: 150px 96px 146px 504px;
-    position: relative;     
+    position: relative;
+
+    @include desktop {
+        padding: 150px 30px 146px 275px;
+    }
 }
 
 .values__title-text {
     margin-bottom: 60px;
     color: #fff;
+
+    // @include desktop {
+    //     width: 255px;
+    //     margin: 0 auto;
+    //     text-align: center;
+    // }
 }
 
 .values__desc {
@@ -15,6 +25,12 @@
     max-width: 600px;
     color: #706a65;
     font-size: 16px;
+
+    // @include desktop {
+    //     max-width: 455px;
+    //     margin: 0 auto;
+    //     text-align: center;
+    // }
 }
 
 .values::after {
@@ -23,4 +39,9 @@
     left: 0;
     top: 455px;
     display: block;
+
+    @include desktop {
+        width: 390px;
+        height: 645px;
+    }
 }

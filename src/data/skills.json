@@ -2,18 +2,19 @@
     {
         "skillsGroup": "Frontend",
         "skills": {
-            "HTML5": 30,
-            "CSS3": 50,
-            "JavaScript и JQuery": 30
+            "HTML5": 25,
+            "CSS3": 12.5,
+            "JavaScript": 75,
+            "JQuery и Vue": 25
         }
     },
     {
-        "skillsGroup": "Backend",
+        "skillsGroup": "Workflow",
         "skills" : {
-            "PHP": 30,
-            "MySQL": 60,
-            "Node.js и npm": 30,
-            "Mongo.db": 70
+            "GIT": 12.5,
+            "Terminal": 25,
+            "Gulp": 50,
+            "Webpack": 37.5
         }
     }
 ]

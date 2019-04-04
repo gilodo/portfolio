@@ -1,4 +1,4 @@
-.hero{
+.hero {
     position: absolute;
     z-index: 10;
     top: 0;
@@ -21,10 +21,15 @@
 .owner-info {
     display: flex;
     color: #fff;
+
+    @include tablets {
+        display:  block;
+        text-align: center;
+        width: auto;
+    }
 }
 
 .owner-info__title {
-    width: 176px;
     font-weight: 600;
     font-size: 18px;
     padding-top: 18px;
@@ -35,6 +40,7 @@
     font-size: 72px;
     width: 415px;
     line-height: 1;
+    padding-left: 10px    
 }
 
 .scroll-down {
