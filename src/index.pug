@@ -35,9 +35,7 @@ html(lang="en")
                         - var navItems = ['Главная', 'Обо мне','Навыки','Работы','Отзывы','Связаться'];
                         each item in navItems
                           li.nav__item
-                            a(href='#').nav__link #{item}
-                  .hamburger-menu
-                    span          
+                            a(href='#' title=`${item}`).nav__link #{item}
                   .header__socials
                     ul.socials
                       - var socials = ['insta', 'vk', 'github'];
@@ -45,6 +43,8 @@ html(lang="en")
                         li.socials__item
                           a(href='#').socials__link
                             +icon(`${item}`, 'socials__icon')
+                  button(type="button").hamburger-menu
+                    span
                 .hero__content
                   .owner-info
                     .owner-info__title Личный сайт </br> веб-разработчика
@@ -60,13 +60,12 @@ html(lang="en")
                   .owner__avatar
                     +image('content/owner.png', 'owner__avatar-pic')
                   .owner__data
-                    table.owner__data-table
-                      -
-                        var data = [
-                          ['Проживаю', 'Рига'],
-                          ['Возраст', '38 лет'],
-                          ['Родился', '23 ноября 1980'],
-                        ]
+                    //- table.owner__data-table
+                    //-   - var data = [
+                    //-       ['Проживаю', 'Рига'],
+                    //-       ['Возраст', '38 лет'],
+                    //-       ['Родился', '23 ноября 1980'],
+                    //-     ];
                       each row in data
                         tr.owner__data-row
                           td.owner__data-cell-first #{row[0]}
@@ -96,17 +95,17 @@ html(lang="en")
         section.me
           .container
 
-            section.reviews.me-reviews
+            section.reviews.me-reviews#reviews
               .reviews__header
                 h2.section-title.reviews-title Что обо мне говорят
                 .reviews-controls
-                  button(type="button").reviews-controls__button.reviews-controls__button_prev
+                  button(type="button" @click="previous()").reviews-controls__button.reviews-controls__button_prev
                     +icon('arrow-down', 'reviews-controls__pic')
-                  button(type="button").reviews-controls__button.reviews-controls__button_next
+                  button(type="button" @click="next()").reviews-controls__button.reviews-controls__button_next
                     +icon('arrow-down', 'reviews-controls__pic')
-              ul.reviews__slider
+              ul.flickity(ref="flickity" :options="flickityOptions").reviews__slider
                 - for (var i = 0; i < 2; i++) // ??????????
-                  li.reviews__slider-item
+                  li.carousel-cell.reviews__slider-item
                     .quote
                       .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                       .quote__author

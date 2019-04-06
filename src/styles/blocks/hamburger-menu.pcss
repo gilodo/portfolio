@@ -1,49 +1,54 @@
 .hamburger-menu {
-    display: none;
-    @include tablets {
-      position: relative;
+  display: none;
+  position: relative;  
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  margin-left: 90px;
+  padding: 0;
+  z-index: 10;
+    @include desktopMini {
       display: flex;
-      align-items: center;
-      width: 20px;
-      height: 20px;
-      margin-left: 10px;
-      span {
-        width: 20px;
-        height: 2px;
-        background-color: #fff;
-      }
-      &:before {
-        display: block;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        height: 2px;
-        background-color: #fff;
-      }
-      &:after {
-        display: block;
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 20px;
-        height: 2px;
-        background-color: #fff;
-      }
+    span {
+      width: 25px;
+      height: 4px;
+      background-color: #fff;
+      display: block;
+    }
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25px;
+      height: 4px;
+      background-color: #fff;
+    }
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 25px;
+      height: 4px;
+      background-color: #fff;
     }
   }
+}
   .hamburger-menu.active {
     span {
       display: none;
     }
     &:before {
-      top: 10px;
+      top: 13px;
       transform: rotate(45deg);
+      background-color: #fff;
     }
     &:after {
       bottom: 8px;
       transform: rotate(-45deg);
+      background-color: #fff;
     }
   }

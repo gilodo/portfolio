@@ -10,12 +10,16 @@
 
     @include desktop {
         padding: 75px 0px 125px
-    }
+        }
+    @include phones {
+        flex-direction:  column;
+    }    
 }
 
 .about__left {
     margin-right: 156px;
     max-width: 280px;
+    flex-shrink: 0;
 }
 
 .owner__avatar {

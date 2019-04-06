@@ -4,6 +4,7 @@
   "bp-super-wide": "2800px",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
+  "bp-desktop-mini": "1023px",
   "bp-tablets": "768px",
   "bp-phones": "480px"
 }
