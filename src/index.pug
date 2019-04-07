@@ -103,7 +103,7 @@ html(lang="en")
                     +icon('arrow-down', 'reviews-controls__pic')
                   button(type="button" @click="next()").reviews-controls__button.reviews-controls__button_next
                     +icon('arrow-down', 'reviews-controls__pic')
-              ul.flickity(ref="flickity" :options="flickityOptions").reviews__slider
+              flickity(ref="flickity" :options="flickityOptions").reviews__slider
                 - for (var i = 0; i < 2; i++) // ??????????
                   li.carousel-cell.reviews__slider-item
                     .quote
